@@ -23,7 +23,7 @@ module Restforce
       end
 
       def bearer?
-        options[:email]
+        true #options[:email]
       end
 
       # Internal: Returns true if username/password (autonomous) flow should be used for
