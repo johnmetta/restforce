@@ -15,9 +15,15 @@ module Restforce
       def authentication_middleware
         if username_password?
           Restforce::Middleware::Authentication::Password
+        elsif bearer?
+          Restforce::Middleware::Authentication::Bearer
         elsif oauth_refresh?
           Restforce::Middleware::Authentication::Token
         end
+      end
+
+      def bearer?
+        options[:email]
       end
 
       # Internal: Returns true if username/password (autonomous) flow should be used for

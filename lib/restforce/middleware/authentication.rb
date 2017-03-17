@@ -5,6 +5,7 @@ module Restforce
   # the oauth access token (if a refresh token is present).
   class Middleware::Authentication < Restforce::Middleware
     autoload :Password, 'restforce/middleware/authentication/password'
+    autoload :Bearer,    'restforce/middleware/authentication/bearer'
     autoload :Token,    'restforce/middleware/authentication/token'
 
     # Rescue from 401's, authenticate then raise the error again so the client

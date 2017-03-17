@@ -3,6 +3,7 @@ gemspec
 
 gem 'rake'
 gem 'jruby-openssl', :platforms => :jruby
+#gem 'jwt'
 
 group :development do
   gem 'guard-rspec'
