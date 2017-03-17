@@ -11,6 +11,7 @@ module Restforce
     # Rescue from 401's, authenticate then raise the error again so the client
     # can reissue the request.
     def call(env)
+      authenticate!
       @app.call(env)
     rescue Restforce::UnauthorizedError
       authenticate!
